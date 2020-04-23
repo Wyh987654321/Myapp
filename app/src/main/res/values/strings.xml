@@ -2,8 +2,41 @@
     <string name="app_name">兼优</string>
     <string name="login">登录</string>
     <string name="password">验证码</string>
+    <string name="msg">消息</string>
     <string name="ID">手机号</string>
     <string name="welconme">Welcome</string>
     <string name="register">忘记密码？| 立即注册</string>
     <string name="getnum">获取验证码</string>
+    <string name="title_activity_school">SchoolActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="school">校内</string>
+    <string name="society">校外</string>
+    <string name="issue">发布</string>
+    <string name="platform">论坛</string>
+    <string name="my">我的</string>
+    <string name="s001">热门话题</string>
+    <string name="s002">校园论坛</string>
+    <string name="s003">学校资讯</string>
+    <string name="s004">学习天地</string>
+    <string name="s005">新手指南</string>
+    <string name="s006">任务大厅</string>
+    <string name="s007">跳蚤市场</string>
+    <string name="words">有哪位大佬会Java的啊，有偿求辅导！价格私聊！救救孩子吧！o(╥﹏╥)o</string>
+    <string name="words2">醉后不知天在水,满船清梦压星河</string>
+    <string name="user1">一位扬州姑娘</string>
+    <string name="user2">轻狂书生</string>
+    <string name="attention">关注</string>
+    <string name="dot">···</string>
+    <string name="time1">10分钟前</string>
+    <string name="s009">赞</string>
+    <string name="s010">评论</string>
+    <string name="s011">打赏</string>
+    <string name="time2">刚刚</string>
 </resources>

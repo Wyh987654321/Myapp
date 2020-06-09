@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FifthFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#FCFCFC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@mipmap/setting" />
+
+        <ImageView
+            android:id="@+id/imageView8"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/my_intro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@mipmap/right" />
+
+        <ImageView
+            android:id="@+id/my_head"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="20dp"
+            android:background="#FCFCFC"
+            android:src="@mipmap/head"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/my_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:text="一位扬州姑娘"
+            app:layout_constraintStart_toEndOf="@+id/my_head"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/my_grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="35dp"
+            android:text="@string/grade"
+            android:textColor="#FF0000"
+            app:layout_constraintStart_toEndOf="@+id/my_name"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/my_intro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:text="袅娜少女羞，岁月无忧愁"
+            app:layout_constraintStart_toEndOf="@+id/my_head"
+            app:layout_constraintTop_toBottomOf="@+id/my_name" />
+
+        <TextView
+            android:id="@+id/attention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="80dp"
+            android:text="@string/attention"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/my_name" />
+
+        <TextView
+            android:id="@+id/fans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="80dp"
+            android:text="@string/fans"
+            app:layout_constraintStart_toEndOf="@+id/attention"
+            app:layout_constraintTop_toTopOf="@+id/my_name" />
+
+        <TextView
+            android:id="@+id/rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="80dp"
+            android:text="@string/s037"
+            app:layout_constraintStart_toEndOf="@+id/fans"
+            app:layout_constraintTop_toTopOf="@+id/my_name" />
+
+        <TextView
+            android:id="@+id/money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="80dp"
+            android:text="@string/s035"
+            app:layout_constraintStart_toEndOf="@+id/rate"
+            app:layout_constraintTop_toTopOf="@+id/my_name" />
+
+        <TextView
+            android:id="@+id/my_attention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/attention" />
+
+        <TextView
+            android:id="@+id/my_fans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="65dp"
+            android:layout_marginLeft="65dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+
+            app:layout_constraintStart_toEndOf="@+id/my_attention"
+            app:layout_constraintTop_toBottomOf="@+id/fans" />
+
+        <TextView
+            android:id="@+id/my_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+
+            app:layout_constraintStart_toEndOf="@+id/my_fans"
+            app:layout_constraintTop_toBottomOf="@+id/rate" />
+
+        <TextView
+            android:id="@+id/my_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+
+            app:layout_constraintStart_toEndOf="@+id/my_rate"
+            app:layout_constraintTop_toBottomOf="@+id/money" />
+
+        <TextView
+            android:id="@+id/my_line1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="70dp"
+            android:background="#F0F0F0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/my_head" />
+
+        <ListView
+            android:id="@+id/mylist"
+            android:layout_width="409dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            android:divider="#00000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/my_line1" />
+
+        <TextView
+            android:id="@+id/my_line2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="15dp"
+            android:background="#F0F0F0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mylist" />
+
+        <ListView
+            android:id="@+id/mylist2"
+            android:layout_width="409dp"
+            android:layout_height="419dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            android:divider="#00000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/my_line2" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

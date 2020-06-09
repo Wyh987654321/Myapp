@@ -59,7 +59,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
-        android:text="@string/signature"
+        android:text="袅娜少女羞，岁月无忧愁"
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 

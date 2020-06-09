@@ -9,14 +9,53 @@
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MytaskActivity">
+        <activity android:name=".School2Activity">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
         </activity>
-        <activity android:name=".MsgActivity">
+        <activity android:name=".MytaskActivity">
+
+<!--             <intent-filter>-->
+<!--             <action android:name="android.intent.action.MAIN" />-->
+
+
+<!--             <category android:name="android.intent.category.LAUNCHER" />-->
+<!--             </intent-filter>-->
+        </activity> <!-- <activity android:name=".MsgActivity"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.MAIN" /> -->
+        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
+        <activity android:name=".MyActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name=".IssueActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity android:name=".SchoolActivity">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity android:name=".MainActivity">
 
              <intent-filter>
              <action android:name="android.intent.action.MAIN" />
@@ -24,39 +63,6 @@
 
              <category android:name="android.intent.category.LAUNCHER" />
              </intent-filter>
-        </activity>
-        <activity android:name=".MyActivity">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
-        <activity android:name=".IssueActivity">
-
-<!--             <intent-filter>-->
-<!--             <action android:name="android.intent.action.MAIN" />-->
-
-
-<!--             <category android:name="android.intent.category.LAUNCHER" />-->
-<!--             </intent-filter>-->
-        </activity>
-        <activity android:name=".SchoolActivity">
-<!--             <intent-filter>-->
-<!--             <action android:name="android.intent.action.MAIN" />-->
-
-
-<!--             <category android:name="android.intent.category.LAUNCHER" />-->
-<!--             </intent-filter>-->
-        </activity>
-        <activity android:name=".MainActivity">
-
-<!--             <intent-filter>-->
-<!--             <action android:name="android.intent.action.MAIN" />-->
-
-
-<!--             <category android:name="android.intent.category.LAUNCHER" />-->
-<!--             </intent-filter>-->
         </activity>
     </application>
 

@@ -108,8 +108,8 @@
             android:id="@+id/rate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="55dp"
-            android:layout_marginLeft="55dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginLeft="52dp"
             android:layout_marginTop="80dp"
             android:text="@string/s037"
             app:layout_constraintStart_toEndOf="@+id/fans"
@@ -128,49 +128,45 @@
 
         <TextView
             android:id="@+id/my_attention"
-            android:layout_width="wrap_content"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="35dp"
             android:layout_marginLeft="35dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
-
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/attention" />
 
         <TextView
             android:id="@+id/my_fans"
-            android:layout_width="wrap_content"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="65dp"
-            android:layout_marginLeft="65dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
-
             app:layout_constraintStart_toEndOf="@+id/my_attention"
             app:layout_constraintTop_toBottomOf="@+id/fans" />
 
         <TextView
             android:id="@+id/my_rate"
-            android:layout_width="wrap_content"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="70dp"
-            android:layout_marginLeft="70dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
-
             app:layout_constraintStart_toEndOf="@+id/my_fans"
             app:layout_constraintTop_toBottomOf="@+id/rate" />
 
         <TextView
             android:id="@+id/my_money"
-            android:layout_width="wrap_content"
+            android:layout_width="30dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="70dp"
-            android:layout_marginLeft="70dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginLeft="60dp"
             android:layout_marginTop="10dp"
             android:gravity="center"
-
             app:layout_constraintStart_toEndOf="@+id/my_rate"
             app:layout_constraintTop_toBottomOf="@+id/money" />
 

@@ -24,13 +24,16 @@ public class MainActivity extends AppCompatActivity {
         btn =findViewById(R.id.login);
         number=findViewById(R.id.number);
         password =findViewById(R.id.PAWd);
-//        UserItem test = new UserItem("41811002","1");
-//        InfroItem test2 = new InfroItem("41811002","一位扬州姑娘","袅娜少女羞，岁月无忧愁",
-//                "Lv10","108","66","80%",6,R.mipmap.head);
-//        DBManager manager = new DBManager(this);
-//        DBManager2 manager2 = new DBManager2(this);
-//        manager2.add(test2);
-//        manager.add(test);
+        UserItem test = new UserItem("41811002","1","一位扬州姑娘","袅娜少女羞，岁月无忧愁",
+                "Lv10","66","80%","108",6,R.mipmap.head);
+        UserItem test2 = new UserItem("41811003","2","YKing","我是要成为YKing的男人",
+                "Lv1","10","60%","6",0,R.mipmap.head2);
+
+        DBManager manager = new DBManager(this);
+        //DBManager2 manager2 = new DBManager2(this);
+        //manager2.add(test2);
+        manager.add(test);
+        manager.add(test2);
     }
 
     public void login(View btn){

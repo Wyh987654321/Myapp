@@ -23,7 +23,14 @@ public class DBManager {
         ContentValues values = new ContentValues();
         values.put("number", item.getNumber());
         values.put("password", item.getPassword());
-
+        values.put("name", item.getName());
+        values.put("grade", item.getGrade());
+        values.put("rate",item.getRate());
+        values.put("attention", item.getAttention());
+        values.put("fans", item.getFans());
+        values.put("money", item.getMoney());
+        values.put("avatar", item.getAvatar());
+        values.put("intro",item.getIntro());
         db.insert(TBNAME, null, values);
         db.close();
     }
@@ -34,6 +41,14 @@ public class DBManager {
             ContentValues values = new ContentValues();
             values.put("number", item.getNumber());
             values.put("password", item.getPassword());
+            values.put("name", item.getName());
+            values.put("grade", item.getGrade());
+            values.put("rate",item.getRate());
+            values.put("attention", item.getAttention());
+            values.put("fans", item.getFans());
+            values.put("money", item.getMoney());
+            values.put("avatar", item.getAvatar());
+            values.put("intro",item.getIntro());
             db.insert(TBNAME, null, values);
         }
         db.close();
@@ -45,9 +60,9 @@ public class DBManager {
         db.close();
     }
 
-    public void delete(int id){
+    public void delete(String number){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        db.delete(TBNAME, "ID=?", new String[]{String.valueOf(id)});
+        db.delete(TBNAME, "NUMBER=?", new String[]{number});
         db.close();
     }
 
@@ -56,7 +71,15 @@ public class DBManager {
         ContentValues values = new ContentValues();
         values.put("number", item.getNumber());
         values.put("password", item.getPassword());
-        db.update(TBNAME, values, "ID=?", new String[]{String.valueOf(item.getId())});
+        values.put("name", item.getName());
+        values.put("grade", item.getGrade());
+        values.put("rate",item.getRate());
+        values.put("attention", item.getAttention());
+        values.put("fans", item.getFans());
+        values.put("money", item.getMoney());
+        values.put("avatar", item.getAvatar());
+        values.put("intro",item.getIntro());
+        db.update(TBNAME, values, "NUMBER=?", new String[]{item.getNumber()});
         db.close();
     }
 
@@ -68,7 +91,14 @@ public class DBManager {
             userlist = new ArrayList<UserItem>();
             while(cursor.moveToNext()){
                 UserItem item = new UserItem();
-                item.setId(cursor.getInt(cursor.getColumnIndex("ID")));
+                item.setMoney(cursor.getInt(cursor.getColumnIndex("MONEY")));
+                item.setIntro(cursor.getString(cursor.getColumnIndex("INTRO")));
+                item.setName(cursor.getString(cursor.getColumnIndex("NAME")));
+                item.setRate(cursor.getString(cursor.getColumnIndex("RATE")));
+                item.setGrade(cursor.getString(cursor.getColumnIndex("GRADE")));
+                item.setFans(cursor.getString(cursor.getColumnIndex("FANS")));
+                item.setAvatar(cursor.getInt(cursor.getColumnIndex("AVATAR")));
+                item.setAttention(cursor.getString(cursor.getColumnIndex("ATTENTION")));
                 item.setNumber(cursor.getString(cursor.getColumnIndex("NUMBER")));
                 item.setPassword(cursor.getString(cursor.getColumnIndex("PASSWORD")));
                 userlist.add(item);
@@ -79,20 +109,7 @@ public class DBManager {
         return userlist;
     }
 
-    public UserItem findById(int id){
-        SQLiteDatabase db = dbHelper.getReadableDatabase();
-        Cursor cursor = db.query(TBNAME, null, "ID=?", new String[]{String.valueOf(id)}, null, null, null);
-        UserItem userItem = null;
-        if(cursor!=null && cursor.moveToFirst()){
-            userItem = new UserItem();
-            userItem.setId(cursor.getInt(cursor.getColumnIndex("ID")));
-            userItem.setNumber(cursor.getString(cursor.getColumnIndex("number")));
-            userItem.setPassword(cursor.getString(cursor.getColumnIndex("password")));
-            cursor.close();
-        }
-        db.close();
-        return userItem;
-    }
+
     public boolean isUser(String num,String pass){
         boolean result=false;
         SQLiteDatabase db = dbHelper.getReadableDatabase();
@@ -112,4 +129,26 @@ public class DBManager {
         return result;
     }
 
+    public UserItem select(String number){
+        UserItem result = new UserItem();
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.query(TBNAME, null, null, null, null, null, null);
+        if(cursor!=null){
+            while(cursor.moveToNext()){
+                if(number.equals(cursor.getString(cursor.getColumnIndex("NUMBER")))){
+                    result.setNumber(cursor.getString(cursor.getColumnIndex("NUMBER")));
+                    result.setMoney(cursor.getInt(cursor.getColumnIndex("MONEY")));
+                    result.setPassword(cursor.getString(cursor.getColumnIndex("PASSWORD")));
+                    result.setIntro(cursor.getString(cursor.getColumnIndex("INTRO")));
+                    result.setName(cursor.getString(cursor.getColumnIndex("NAME")));
+                    result.setRate(cursor.getString(cursor.getColumnIndex("RATE")));
+                    result.setGrade(cursor.getString(cursor.getColumnIndex("GRADE")));
+                    result.setFans(cursor.getString(cursor.getColumnIndex("FANS")));
+                    result.setAvatar(cursor.getInt(cursor.getColumnIndex("AVATAR")));
+                    result.setAttention(cursor.getString(cursor.getColumnIndex("ATTENTION")));
+                }
+            }
+        }
+        return result;
+    }
 }

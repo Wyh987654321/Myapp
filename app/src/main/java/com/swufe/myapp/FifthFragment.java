@@ -66,6 +66,7 @@ public class FifthFragment extends Fragment implements  AdapterView.OnItemClickL
         }
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -81,9 +82,9 @@ public class FifthFragment extends Fragment implements  AdapterView.OnItemClickL
         TextView fans = view.findViewById(R.id.my_fans);
         //得到用户ID
         number =  getActivity().getIntent().getStringExtra("number");
-        DBManager2 manager = new DBManager2(getContext());
+        DBManager manager = new DBManager(getContext());
         //得到用户信息
-        InfroItem user =manager.select(number);
+        UserItem user =manager.select(number);
         //设置控件内容
         head.setImageResource(user.getAvatar());
         name.setText(user.getName());
@@ -92,8 +93,7 @@ public class FifthFragment extends Fragment implements  AdapterView.OnItemClickL
         attention.setText(user.getAttention());
         rate.setText(user.getRate());
         fans.setText(user.getFans());
-        money.setText(user.getFans());
-        Log.i("School2Activity","intro="+user.getIntro());
+        money.setText(user.getMoney()+"");
         //第一个列表
         listItems = new ArrayList<HashMap<String, Object>>();
         String title [] = new String[]{"已报名","已发布","已完成"};

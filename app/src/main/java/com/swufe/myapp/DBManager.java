@@ -12,7 +12,7 @@ import java.util.List;
 public class DBManager {
     private DBHelper dbHelper;
     private String TBNAME;
-
+    String TAG="run1";
     public DBManager(Context context) {
         dbHelper = new DBHelper(context);
         TBNAME = DBHelper.TB_NAME;
@@ -31,7 +31,9 @@ public class DBManager {
         values.put("money", item.getMoney());
         values.put("avatar", item.getAvatar());
         values.put("intro",item.getIntro());
+        values.put("university",item.getUniversity());
         db.insert(TBNAME, null, values);
+        Log.i(TAG, "add:我运行了");
         db.close();
     }
 
@@ -49,6 +51,7 @@ public class DBManager {
             values.put("money", item.getMoney());
             values.put("avatar", item.getAvatar());
             values.put("intro",item.getIntro());
+            values.put("university",item.getUniversity());
             db.insert(TBNAME, null, values);
         }
         db.close();
@@ -79,6 +82,7 @@ public class DBManager {
         values.put("money", item.getMoney());
         values.put("avatar", item.getAvatar());
         values.put("intro",item.getIntro());
+        values.put("university",item.getUniversity());
         db.update(TBNAME, values, "NUMBER=?", new String[]{item.getNumber()});
         db.close();
     }
@@ -101,6 +105,7 @@ public class DBManager {
                 item.setAttention(cursor.getString(cursor.getColumnIndex("ATTENTION")));
                 item.setNumber(cursor.getString(cursor.getColumnIndex("NUMBER")));
                 item.setPassword(cursor.getString(cursor.getColumnIndex("PASSWORD")));
+                item.setPassword(cursor.getString(cursor.getColumnIndex("UNIVERSITY")));
                 userlist.add(item);
             }
             cursor.close();
@@ -112,15 +117,31 @@ public class DBManager {
 
     public boolean isUser(String num,String pass){
         boolean result=false;
+        int i=0;
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        String []columns=new String[]{"number","password"};
         Cursor cursor = db.query(TBNAME, null, null, null, null, null, null);
         if(cursor!=null){
             while (cursor.moveToNext()){
-                Log.i("MainActivity","number"+cursor.getString(cursor.getColumnIndex("NUMBER")));
-                Log.i("MainActivity","number"+cursor.getString(cursor.getColumnIndex("PASSWORD")));
                 if(num.equals(cursor.getString(cursor.getColumnIndex("NUMBER")))&&
                         pass.equals(cursor.getString(cursor.getColumnIndex("PASSWORD")))){
+                        result=true;
+                        break;
+                    }
+                }
+            }
+        return result;
+    }
+
+    public boolean isLegal(String number){
+        boolean result = false;
+        if(number.length()!=8){
+            return true;
+        }
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+        Cursor cursor = db.query(TBNAME, null, null, null, null, null, null);
+        if(cursor!=null){
+            while (cursor.moveToNext()){
+                if(number.equals(cursor.getString(cursor.getColumnIndex("NUMBER")))){
                     result=true;
                     break;
                 }
@@ -146,6 +167,7 @@ public class DBManager {
                     result.setFans(cursor.getString(cursor.getColumnIndex("FANS")));
                     result.setAvatar(cursor.getInt(cursor.getColumnIndex("AVATAR")));
                     result.setAttention(cursor.getString(cursor.getColumnIndex("ATTENTION")));
+                    result.setUniversity(cursor.getString(cursor.getColumnIndex("UNIVERSITY")));
                 }
             }
         }

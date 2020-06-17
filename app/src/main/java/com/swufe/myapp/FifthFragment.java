@@ -1,6 +1,7 @@
 package com.swufe.myapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -36,6 +37,7 @@ public class FifthFragment extends Fragment implements  AdapterView.OnItemClickL
     private String mParam1;
     private String mParam2;
     private String number;
+    String TAG="run1";
     public FifthFragment(){
         // Required empty public constructor
     }
@@ -141,6 +143,34 @@ public class FifthFragment extends Fragment implements  AdapterView.OnItemClickL
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(getActivity(),"敬请期待",Toast.LENGTH_SHORT).show();
+        TextView  title =view.findViewById(R.id.ttitle);
+        String titleStr = title.getText().toString();
+        if(titleStr.equals("已报名")){
+            Intent accept_tasks = new Intent(getActivity(), AcceptTasks.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("number",number);
+            accept_tasks.putExtras(bundle);
+            startActivity(accept_tasks);
+
+        }else if(titleStr.equals("已完成")){
+            Intent complete = new Intent(getActivity(), CompleteActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("number",number);
+            complete.putExtras(bundle);
+            startActivity(complete);
+
+        }else if(titleStr.equals("已发布")){
+            Intent publish = new Intent(getActivity(), MyPublishActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("number",number);
+            publish.putExtras(bundle);
+            startActivity(publish);
+
+        }
+
+
+        else{
+            Toast.makeText(getActivity(),"敬请期待",Toast.LENGTH_SHORT).show();
+        }
     }
 }

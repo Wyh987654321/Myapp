@@ -22,7 +22,7 @@ public class School2Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_school2);
         Bundle bundle =this.getIntent().getExtras();
-        number =bundle.getString("number");
+        number =bundle.getString("number","41811002");
 //        Log.i(TAG,"");
         //传递用户ID给Fragment
         Fragment fragment = new FifthFragment();

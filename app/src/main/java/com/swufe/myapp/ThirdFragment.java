@@ -1,12 +1,23 @@
 package com.swufe.myapp;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TableLayout;
+import android.widget.Toast;
+
+import com.google.android.material.tabs.TabLayout;
+
+import java.util.List;
 
 
 /**
@@ -23,6 +34,7 @@ public class ThirdFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    String number;
 
     public ThirdFragment() {
         // Required empty public constructor
@@ -59,6 +71,39 @@ public class ThirdFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_third, container, false);
+        View view =inflater.inflate(R.layout.fragment_thrid,container,false);
+        Button button =view.findViewById(R.id.issue);
+        //得到用户ID，用于上传任务
+        number =  getActivity().getIntent().getStringExtra("number");
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                View view =getView();
+                EditText detail =view.findViewById(R.id.detail);
+
+                EditText reward =view.findViewById(R.id.reward);
+                EditText people =view.findViewById(R.id.people);
+                String details = detail.getText().toString();
+
+                String rewardStr =reward.getText().toString();
+                String peopleStr =people.getText().toString();
+                int rewardInt=0;
+                int peopleInt=0;
+                if(rewardStr.length()>0){
+                    rewardInt=Integer.parseInt(rewardStr);
+                }
+                if(peopleStr.length()>0){
+                    peopleInt=Integer.parseInt(peopleStr);
+                }
+                TaskManger manger = new TaskManger(getContext());
+                TaskItem task = new TaskItem(number,details,rewardInt,peopleInt);
+
+                manger.add(task);
+                List<TaskItem> list= manger.listAll();
+                Toast.makeText(getActivity(),"任务发布成功",Toast.LENGTH_SHORT).show();
+            }
+
+        });
+        return view;
     }
 }

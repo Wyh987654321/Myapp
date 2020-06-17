@@ -12,8 +12,9 @@ public class UserItem {
     private  String attention;
     private  Integer money;
     private  int  avatar;
-
-    public UserItem(String number, String password, String name, String intro, String grade, String fans, String rate, String attention, Integer money, int avatar) {
+    private  String university;
+    public UserItem(String number, String password, String name, String intro, String grade,
+                    String fans, String rate, String attention, Integer money, int avatar,String university) {
         this.number = number;
         this.password = password;
         this.name = name;
@@ -24,6 +25,15 @@ public class UserItem {
         this.attention = attention;
         this.money = money;
         this.avatar = avatar;
+        this.university=university;
+    }
+
+    public String getUniversity() {
+        return university;
+    }
+
+    public void setUniversity(String university) {
+        this.university = university;
     }
 
     public UserItem() {
@@ -37,6 +47,20 @@ public class UserItem {
         attention="";
         money=0;
         avatar=0;
+        university="";
+    }
+    public UserItem(String number,String password) {
+        this.number=number;
+        this.password=password;
+        name="";
+        intro="";
+        grade="";
+        fans="";
+        rate="";
+        attention="";
+        money=0;
+        avatar=R.mipmap.default_avatar;
+        university="";
     }
 
     public String getNumber() {
